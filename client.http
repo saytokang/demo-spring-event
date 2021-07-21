@@ -1,0 +1,6 @@
+POST http://localhost:8080/customer/new
+Content-Type: application/x-www-form-urlencoded
+
+name=홍길동
+&email=hong@gmail.com
+###
