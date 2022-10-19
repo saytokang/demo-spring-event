@@ -15,20 +15,25 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Getter
 public class Customer {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-    private String name;
-    private String email;
-    private String token;
 
-    @Builder
-    public Customer(String name, String email) {
-        this.name = name;
-        this.email = email;
-    }
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
 
-    public void withToken(String token) {
-        this.token = token;
-    }
+	private String name;
+
+	private String email;
+
+	private String token;
+
+	@Builder
+	public Customer(String name, String email) {
+		this.name = name;
+		this.email = email;
+	}
+
+	public void withToken(String token) {
+		this.token = token;
+	}
+
 }

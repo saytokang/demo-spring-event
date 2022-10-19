@@ -4,6 +4,6 @@ import com.example.demoevent.entity.Customer;
 
 public interface TokenGenerator {
 
-    public void generateToken(Customer customer);
-    
+	public void generateToken(Customer customer);
+
 }

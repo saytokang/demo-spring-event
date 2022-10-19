@@ -17,15 +17,15 @@ import lombok.extern.slf4j.Slf4j;
 @RequiredArgsConstructor
 public class DefaultTokenGenerator implements TokenGenerator {
 
-    private final CustomerRepository customerRepository;
+	private final CustomerRepository customerRepository;
 
-    @Override
-    @Transactional(propagation = Propagation.REQUIRES_NEW)
-    public void generateToken(Customer customer) {
-        log.info("== Token Generated : {}", customer.getName());
-        String token = UUID.randomUUID().toString();
-        customer.withToken(token);
-        customerRepository.save(customer);
-    }
-    
+	@Override
+	@Transactional(propagation = Propagation.REQUIRES_NEW)
+	public void generateToken(Customer customer) {
+		log.info("== Token Generated : {}, token: {}", customer.getName(), UUID.randomUUID().toString());
+		String token = UUID.randomUUID().toString();
+		customer.withToken(token);
+		customerRepository.save(customer);
+	}
+
 }
